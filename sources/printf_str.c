@@ -6,11 +6,11 @@
 /*   By: jlebard <jlebard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 11:35:55 by jlebard           #+#    #+#             */
-/*   Updated: 2023/12/20 15:23:23 by jlebard          ###   ########.fr       */
+/*   Updated: 2023/12/20 16:36:45 by jlebard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 int	ft_if_string(char *s)
 {

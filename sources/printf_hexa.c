@@ -6,11 +6,11 @@
 /*   By: jlebard <jlebard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 11:33:40 by jlebard           #+#    #+#             */
-/*   Updated: 2023/12/20 13:20:10 by jlebard          ###   ########.fr       */
+/*   Updated: 2023/12/20 16:40:53 by jlebard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 int	ft_if_hexa_down(int n)
 {
@@ -21,7 +21,7 @@ int	ft_if_hexa_down(int n)
 	i = 0;
 	if (n < 0)
 	{
-		write(1, '-', 1);
+		write(1, "-", 1);
 		ft_if_hexa_down(-n);
 	}
 	dest = malloc(sizeof(char) * (n / 16 + 2));

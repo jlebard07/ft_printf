@@ -6,11 +6,11 @@
 /*   By: jlebard <jlebard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 11:20:49 by jlebard           #+#    #+#             */
-/*   Updated: 2023/12/20 15:44:58 by jlebard          ###   ########.fr       */
+/*   Updated: 2023/12/20 16:36:05 by jlebard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 // #include <stdio.h>
 
 static int	ft_write_data_type(char *cible, va_list args)

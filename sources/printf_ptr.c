@@ -6,11 +6,11 @@
 /*   By: jlebard <jlebard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 11:36:32 by jlebard           #+#    #+#             */
-/*   Updated: 2023/12/20 13:21:05 by jlebard          ###   ########.fr       */
+/*   Updated: 2023/12/20 16:36:41 by jlebard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 static int	ft_write_ptr(uintptr_t ptr)
 {

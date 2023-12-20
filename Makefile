@@ -6,7 +6,7 @@
 #    By: jlebard <jlebard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/20 13:41:45 by jlebard           #+#    #+#              #
-#    Updated: 2023/12/20 16:27:03 by jlebard          ###   ########.fr        #
+#    Updated: 2023/12/20 16:31:19 by jlebard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,10 +37,11 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 clean:
-	$(CLEAN) *.o
+	$(CLEAN) libft/*.o
 
 fclean: clean
 	$(FCLEAN) $(NAME)
+	$(FCLEAN) libft/libft.a
 
 re: fclean all
 

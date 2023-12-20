@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   printf_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlebard <jlebard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 12:11:01 by jlebard           #+#    #+#             */
-/*   Updated: 2023/11/27 09:25:02 by jlebard          ###   ########.fr       */
+/*   Created: 2023/12/20 11:35:55 by jlebard           #+#    #+#             */
+/*   Updated: 2023/12/20 15:23:23 by jlebard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	*ft_calloc(size_t n, size_t size)
+int	ft_if_string(char *s)
 {
-	void	*dest;
-
-	if (SIZE_MAX / n < size)
-		return (NULL);
-	dest = malloc(n * size);
-	if (!dest)
-		return (NULL);
-	ft_memset(dest, 0, n * size);
-	return (dest);
+	ft_putstr_fd(s, 1);
+	return ((int)ft_strlen(s));
 }
-
-// int main()
-// {
-// 	size_t n = 65535; 
-// 	size_t size = 65535;
-// 	printf("%p\n", ft_calloc(2, 2));
-// 	printf("vrai calloc : %p\n", calloc(2, 2));
-// 	return 0;
-// }

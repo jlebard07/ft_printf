@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlebard <jlebard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 12:13:22 by jlebard           #+#    #+#             */
-/*   Updated: 2023/11/23 14:03:50 by jlebard          ###   ########.fr       */
+/*   Created: 2023/11/20 12:12:10 by jlebard           #+#    #+#             */
+/*   Updated: 2023/12/01 15:46:20 by jlebard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	*ft_memchr(const void	*s, int c, size_t n)
 {
-	char	*dest;
-	int		i;
+	char	*temp;
 
-	i = 0;
-	dest = malloc((ft_strlen(s) + 1) * sizeof(char));
-	while (s[i])
+	temp = (char *)s;
+	while (temp && n > 0)
 	{
-		dest[i] = s[i];
-		i++;
+		if ((unsigned char)*temp == (unsigned char)c)
+			return (temp);
+		temp++;
+		n--;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (NULL);
 }
 
 // int main()
 // {
-// 	char *str = "alldwndidhwug";
-// 	printf("%s\n", ft_strdup(str));
-// 	printf("vrai strdup : %s\n", strdup(str));
-//	return 0;
+// 	char s[] = {0, 1, 2, 3, 4};
+// 	int c = 0;
+// 	size_t n = 1;
+// 	printf("%p", ft_memchr(s, c, n));
+// 	printf("vrai memchr : %p\n", memchr(s, c, n));
+// 	return 0;
 // }

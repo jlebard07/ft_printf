@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_str.c                                       :+:      :+:    :+:   */
+/*   printf_decimal.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlebard <jlebard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/20 11:35:55 by jlebard           #+#    #+#             */
-/*   Updated: 2024/01/08 13:30:56 by jlebard          ###   ########.fr       */
+/*   Created: 2024/01/03 11:09:11 by jlebard           #+#    #+#             */
+/*   Updated: 2024/01/08 13:23:52 by jlebard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_if_string(char *s)
+int	ft_if_decimal(int n)
 {
-	if (s == NULL)
+	int	i;
+	int	x;
+
+	x = n;
+	i = 1;
+	if (x < 0 && x != -2147483648)
 	{
-		write(1, "(null)", 6);
-		return (6);
+		i = 2;
+		x = -x;
 	}
-	ft_putstr_fd(s, 1);
-	return ((int)ft_strlen(s));
+	else if (x == -2147483648)
+	{
+		ft_putnbr_fd(n, 1);
+		return (11);
+	}
+	while (x > 9)
+	{
+		x /= 10;
+		i++;
+	}
+	ft_putnbr_fd(n, 1);
+	return (i);
 }

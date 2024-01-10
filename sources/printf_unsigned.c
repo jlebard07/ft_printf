@@ -6,18 +6,42 @@
 /*   By: jlebard <jlebard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 11:38:48 by jlebard           #+#    #+#             */
-/*   Updated: 2023/12/20 16:36:49 by jlebard          ###   ########.fr       */
+/*   Updated: 2024/01/10 10:53:29 by jlebard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_if_unsigned(unsigned int n)
+static int	ft_size_of_unsigned(unsigned int n)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	dest = malloc(sizeof(char) * (n / 10 + 2));
+	while (n > 0)
+	{
+		n /= 10;
+		i++;
+	}
+	if (i == 0)
+		i = 1;
+	return (i);
+}
+
+int	ft_if_unsigned(unsigned int n)
+{
+	int				i;
+	int				x;
+	char			*base_unsigned;
+	char			*dest;
+
+	if (n == 0)
+	{
+		write (1, "0", 1);
+		return (1);
+	}
+	x = ft_size_of_unsigned(n);
+	i = 0;
+	dest = malloc(sizeof(char) * (x + 1));
 	base_unsigned = "0123456789";
 	while (n > 0)
 	{
@@ -26,9 +50,8 @@ int	ft_if_unsigned(unsigned int n)
 		i ++;
 	}
 	dest[i] = '\0';
-	n = i + 1;
-	while (i-- >= 0)
+	while (i-- > 0)
 		ft_putchar_fd(dest[i], 1);
 	free(dest);
-	return ((int)n);
+	return (x);
 }

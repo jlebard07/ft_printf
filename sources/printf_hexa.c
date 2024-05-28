@@ -6,7 +6,7 @@
 /*   By: jlebard <jlebard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 11:33:40 by jlebard           #+#    #+#             */
-/*   Updated: 2024/01/08 16:45:19 by jlebard          ###   ########.fr       */
+/*   Updated: 2024/01/29 13:29:44 by jlebard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_if_hexa_down(unsigned int n)
 		write(1, "0", 1);
 		return (1);
 	}
-	dest = malloc(sizeof(char) * (x + 1));
+	dest = ft_calloc(x + 1, sizeof(char));
 	base_hexa = "0123456789abcdef";
 	while (n > 0)
 	{
